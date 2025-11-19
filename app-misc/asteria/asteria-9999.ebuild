@@ -5,7 +5,7 @@ inherit git-r3 cmake
 
 DESCRIPTION="Asteria - Astrology app using Swiss Ephemeris and AI interpretation of charts"
 HOMEPAGE="https://github.com/alamahant/Asteria"
-LICENSE="GPL-3"
+LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
