@@ -18,7 +18,7 @@ IUSE=""
 BDEPEND="dev-build/cmake"
 DEPEND="
 dev-qt/qtbase:6[gui,widgets]
-dev-qt/qtwebengine:6[widgets,bindist,-vaapi]
+dev-qt/qtwebengine:6[widgets,pulseaudio]
 "
 RDEPEND="${DEPEND}"
 
