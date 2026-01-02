@@ -2,11 +2,12 @@
 EAPI=8
 
 inherit cmake
-S="${WORKDIR}/BinauralPlayer-1.2.0"
+
+S="${WORKDIR}/BinauralPlayer-1.4.0"
 
 DESCRIPTION="BinauralPlayer - A binaural and isochronic tone generator and full-featured audio player"
 HOMEPAGE="https://github.com/alamahant/BinauralPlayer"
-SRC_URI="https://github.com/alamahant/BinauralPlayer/archive/refs/tags/v1.2.0.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/alamahant/BinauralPlayer/archive/refs/tags/v1.4.0.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -15,7 +16,7 @@ KEYWORDS="~amd64"
 BDEPEND="dev-build/cmake"
 DEPEND="
     dev-qt/qtbase:6[gui,widgets,network]
-    dev-qt/qtmultimedia:6
+    dev-qt/qtmultimedia:6[pulseaudio,pipewire,vaapi]
 "
 RDEPEND="${DEPEND}"
 
@@ -27,7 +28,7 @@ src_prepare() {
 
     cat > "${S}/CMakeLists.txt" << 'EOF'
 cmake_minimum_required(VERSION 3.19)
-project(BinauralPlayer VERSION 1.2.0 LANGUAGES CXX)
+project(BinauralPlayer VERSION 1.4.0 LANGUAGES CXX)
 
 # Qt6 auto features
 set(CMAKE_AUTORCC ON)
@@ -40,6 +41,7 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS
     Core
     Widgets
     Multimedia
+    MultimediaWidgets
 )
 
 qt_standard_project_setup()
@@ -64,6 +66,8 @@ set(PROJECT_SOURCES
     ambientplayerdialog.h 
     ambientplayerdialog.cpp
     resources.qrc
+    cuesheetdialog.h cuesheetdialog.cpp
+    sessiondialog.h sessiondialog.cpp
 )
 
 qt_add_executable(BinauralPlayer
@@ -75,6 +79,7 @@ target_link_libraries(BinauralPlayer PRIVATE
     Qt6::Core
     Qt6::Widgets
     Qt6::Multimedia
+    Qt6::MultimediaWidgets
 )
 
 set_target_properties(BinauralPlayer PROPERTIES
