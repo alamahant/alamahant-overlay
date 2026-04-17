@@ -17,7 +17,6 @@ DEPEND="
     dev-qt/qtpositioning:6
     dev-qt/qtlocation:6
     dev-qt/qtcharts:6
-    dev-qt/qtopengl
 "
 
 RDEPEND="${DEPEND}"
@@ -141,6 +140,7 @@ set(PROJECT_SOURCES
     Globals.cpp
     donationdialog.h donationdialog.cpp
     resources.qrc
+    modelselectordialog.h modelselectordialog.cpp
 )
 
 qt_add_executable(Asteria
