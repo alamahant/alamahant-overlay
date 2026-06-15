@@ -141,6 +141,7 @@ set(PROJECT_SOURCES
     donationdialog.h donationdialog.cpp
     resources.qrc
     modelselectordialog.h modelselectordialog.cpp
+        socialshare.cpp socialshare.h socialsharedialog.cpp socialsharedialog.h
 )
 
 qt_add_executable(Asteria
