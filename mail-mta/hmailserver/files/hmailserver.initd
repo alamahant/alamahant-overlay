@@ -4,7 +4,6 @@ description="hMailServer SMTP, IMAP and POP3 server"
 
 command="/usr/bin/hmailserver"
 command_args="--foreground"
-#command_user="hmailserver:hmailserver"
 directory="/var/lib/hmailserver"
 
 supervisor="supervise-daemon"
