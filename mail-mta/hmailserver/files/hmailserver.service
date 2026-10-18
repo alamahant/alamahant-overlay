@@ -1,0 +1,16 @@
+[Unit]
+Description=hMailServer SMTP, IMAP and POP3 server
+Documentation=file:/etc/hmailserver/hMailServer.ini
+Wants=network-online.target
+After=network-online.target postgresql.service mariadb.service mysql.service mysqld.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hmailserver --foreground
+WorkingDirectory=/var/lib/hmailserver
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

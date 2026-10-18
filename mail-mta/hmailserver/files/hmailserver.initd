@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+description="hMailServer SMTP, IMAP and POP3 server"
+
+command="/usr/bin/hmailserver"
+command_args="--foreground"
+#command_user="hmailserver:hmailserver"
+directory="/var/lib/hmailserver"
+
+supervisor="supervise-daemon"
+respawn_delay=5
+respawn_max=0
+respawn_period=0
+
+depend() {
+	need net
+}
