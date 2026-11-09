@@ -14,13 +14,14 @@ IUSE="mariadb"
 
 RDEPEND="
 	dev-db/postgresql:=
-	dev-libs/boost:=
-	dev-libs/cyrus-sasl:=
-	dev-libs/openssl:=
-	net-nds/openldap:=
-	sys-libs/zlib:=
-	mariadb? ( dev-db/mariadb:= )
+        dev-libs/boost:=
+        dev-libs/cyrus-sasl:=
+        dev-libs/openssl:=
+        net-nds/openldap:=
+        sys-libs/zlib:=
+        mariadb? ( dev-db/mariadb:= )
 "
+
 BDEPEND="
 	dev-build/cmake
 "
