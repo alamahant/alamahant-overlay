@@ -18,7 +18,7 @@ RDEPEND="
 	sys-libs/zlib:=
 	dev-db/postgresql
 	net-nds/openldap
-	dev-libs/cyrus-sasl
+	dev-libs/cyrus-sasl:=
 	mariadb? ( dev-db/mariadb )
 "
 
