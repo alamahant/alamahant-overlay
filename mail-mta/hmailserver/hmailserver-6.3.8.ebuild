@@ -16,7 +16,7 @@ RDEPEND="
 	dev-libs/openssl:=
 	dev-libs/boost:=
 	sys-libs/zlib:=
-	dev-db/postgresql
+	dev-db/postgresql:18
 	net-nds/openldap
 	dev-libs/cyrus-sasl:=
 	mariadb? ( dev-db/mariadb )
